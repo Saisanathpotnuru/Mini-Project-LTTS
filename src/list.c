@@ -1,36 +1,30 @@
+#include<stdio.h>
 #include"header.h"
-void list()
+int list(int read)
 {
-extern s;
-FILE *f;
-int i;
-if((f=fopen("add.txt","r"))==NULL)
-exit(0);
+
 system("cls");
-printf("ROOM    ");
-printf("NAME\t ");
-printf("\tADDRESS ");
-printf("\tPHONENUMBER ");
-printf("\tNATIONALITY ");
-printf("\tEMAIL ");
-printf("\t\t  PERIOD ");
-printf("\t ARRIVALDATE \n");
- 
-for(i=0;i<118;i++)
-printf("-");
-while(fread(&s,sizeof(s),1,f)==1)
-{
-/*printf("ROOMNUMBER :\t%s\n",s.roomnumber);
-printf("NAME:\t%s\n",,s.name);
-printf("ADDRESS:\t%s\n",s.address);
-printf("PHONENUMBER:\t%s\n",s.phonenumber);
-printf("NATIONALITY \n");*/
-printf("\n%s \t%s \t\t%s \t\t%s \t%s  \t%s  \t     %s  \t  %s",s.roomnumber, s.name , s.address , s.phonenumber ,s.nationality ,s.email,s.period,  s.arrivaldate);
-}
-printf("\n");
-for(i=0;i<118;i++)
-printf("-");
- 
-fclose(f);
-getch();
+FILE *fp;
+int row;
+ fp=fopen("customer.dat","r");
+
+printf("\n\n\t\t\t ****************** List 0f Customers ***************************\n");
+
+row=17;
+		while(fscanf(fp,"%s %s %s %s %s %s\n", c.roomnumber, c.name, c.address, c.phonenumber, c.nationality, c.email, c.period, c.arrivaldate)!=EOF)
+        {
+            printf("Room no: %s \n\n", c.roomnumber);
+            printf("Customer name: %s \n", c.name);
+            printf("Address: %s \n", c.address);
+            printf("Phone no: %s \n", c.phonenumber);
+            printf("Nationality: %s \n", c.nationality);
+            printf("email: %s \n", c.email);
+            printf("Duration of stay: %s \n", c.period);
+            printf("Arrival date: %s \n", c.arrivaldate);
+
+            row++;
+        }
+        fclose(fp);
+
+        return 1;
 }

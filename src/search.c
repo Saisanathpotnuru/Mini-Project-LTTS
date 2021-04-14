@@ -1,37 +1,38 @@
+#include<stdio.h>
 #include"header.h"
-void search()
+int search(int read)
 {
 system("cls");
-extern s;
-FILE *f;
+
+FILE *fp;
 char roomnumber[20];
 int flag=1;
-f=fopen("add.txt","r+");
-if(f==0)
-exit(0);
-fflush(stdin);
-printf("Enter Room number of the customer to search its details: \n");
+fp=fopen("customer.dat","r");
+printf("\n\n\t\t\t ****************** Searching Room Details ***************************\n");
+
+printf("\n\n\nEnter Room number of the customer to search the details: \n");
 scanf("%s", roomnumber);
-while(fread(&s,sizeof(s),1,f)==1)
+while(fscanf(fp,"%s %s %s %s %s %s\n", c.roomnumber, c.name, c.address, c.phonenumber, c.nationality, c.email, c.period, c.arrivaldate)!=EOF)
 {
-if(strcmp(s.roomnumber,roomnumber)==0){
+if(strcmp(c.roomnumber,roomnumber)==0){
 flag=0;
-printf("\n\tRecord Found\n ");
-printf("\nRoom Number:\t%s",s.roomnumber);
-printf("\nName:\t%s",s.name);
-printf("\nAddress:\t%s",s.address);
-printf("\nPhone number:\t%s",s.phonenumber);
-printf("\nNationality:\t%s",s.nationality);
-printf("\nEmail:\t%s",s.email);
-printf("\nPeriod:\t%s",s.period);
-printf("\nArrival date:\t%s",s.arrivaldate);
+printf("\n\tRecord Found\n\n ");
+printf("Room no: %s \n\n", c.roomnumber);
+printf("Customer name: %s \n", c.name);
+printf("Address: %s \n", c.address);
+printf("Phone no: %s \n", c.phonenumber);
+printf("Nationality: %s \n", c.nationality);
+printf("email: %s \n", c.email);
+printf("Duration of stay: %s \n", c.period);
+printf("Arrival date: %s \n", c.arrivaldate);
 flag=0;
 break;
 }
 }
 if(flag==1){
 printf("\n\tRequested Customer could not be found!");
+return 0;
 }
-getch();
-fclose(f);
+fclose(fp);
+return 1;
 }

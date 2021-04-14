@@ -1,52 +1,89 @@
+#include<stdio.h>
 #include"header.h"
-void edit()
+int edit(int read, char temp[])
 {
-FILE *f;
-extern s;
-int k=1;
+FILE *fp, *ft;
+
+int valid=0;
+char ch;
 char roomnumber[20];
-long int size=sizeof(s);
-if((f=fopen("add.txt","r+"))==NULL)
-exit(0);
 system("cls");
+ft=fopen("temp.dat","w+");
+fp=fopen("customer.dat","r");
+if(fp==NULL)
+{
+printf("\n\t !! Can not open file !! ");
+	
+return 0;
+}
+
+printf("\n\n\t\t\t ****************** Edit Customer Details ***************************\n");
+
+if(read==0)
+{
 printf("Enter Room number of the customer to edit:\n\n");
 scanf("%s",roomnumber);
-fflush(stdin);
-while(fread(&s,sizeof(s),1,f)==1)
+}
+else
 {
-if(strcmp(s.roomnumber,roomnumber)==0)
-{
-k=0;
-printf("\nEnter Room Number     :");
-gets(s.roomnumber);
-printf("\nEnter Name    :");
+strcpy(roomnumber,temp);
+}
 fflush(stdin);
-scanf("%s",&s.name);
-printf("\nEnter Address        :");
-scanf("%s",&s.address);
-printf("\nEnter Phone number :");
-scanf("%f",&s.phonenumber);
-printf("\nEnter Nationality :");
-scanf("%s",&s.nationality);
-printf("\nEnter Email :");
-scanf("%s",&s.email);
-printf("\nEnter Period :");
-scanf("%s",&s.period);
-printf("\nEnter Arrival date :");
-scanf("%s",&s.arrivaldate);
-fseek(f,size,SEEK_CUR);  //to go to desired position infile
-fwrite(&s,sizeof(s),1,f);
-break;
+if(ft==NULL)
+{
+printf("\n !! Can not open file !!");
+			
+return 0;
+}
+
+while(fscanf(fp,"%s %s %s %s %s %s\n", c.roomnumber, c.name, c.address, c.phonenumber, c.nationality, c.email, c.period, c.arrivaldate)!=EOF)
+{
+if(strcmp(c.roomnumber,roomnumber)==0)
+{
+valid=1;
+printf("\n\n********** Current Details **********\n\n");
+ printf("Room no: %s \n\n", c.roomnumber);
+printf("Customer name: %s \n", c.name);
+printf("Address: %s \n", c.address);
+printf("Phone no: %s \n", c.phonenumber);
+printf("Nationality: %s \n", c.nationality);
+printf("email: %s \n", c.email);
+printf("Duration of stay: %s \n", c.period);
+printf("Arrival date: %s \n", c.arrivaldate);
+
+printf("\n\n********** Enter New Details *********\n\n");
+
+printf("\n\nEnter New name: ");
+scanf("%s",c.name);
+printf("Enter new address: ");
+scanf("%s",c.address);
+printf("Enter new phone no: ");
+scanf("%s",c.phonenumber);
+printf("Enter new nationality: ");
+scanf("%s",c.nationality);
+printf("Enter new email: ");
+scanf("%s",c.email);
+printf("Enter new stay duration: ");
+scanf("%s",c.period);
+printf("Enter new arrival date: ");
+scanf("%s",c.arrivaldate);
+printf("Press Y to update: ");
+scanf("%c",&ch);
+
+if(ch=='Y')
+{
+fprintf(ft,"%s %s %s %s %s %s\n", c.roomnumber, c.name, c.address, c.phonenumber, c.nationality, c.email, c.period, c.arrivaldate);
+printf("\n\n********** Details Updated *********");
 }
 }
-if(k==1){
-printf("\n\nTHE RECORD DOESN'T EXIST!!!!");
-fclose(f);
-getch();
-}else{
-fclose(f);
-printf("\n\n\t\tYOUR RECORD IS SUCCESSFULLY EDITED!!!");
-getch();
+else
+{
+fprintf(ft,"%s %s %s %s %s %s\n", c.roomnumber, c.name, c.address, c.phonenumber, c.nationality, c.email, c.period, c.arrivaldate);
 }
+if(!valid) printf("\n\t\t!!!! NO RECORD FOUND !!!!");
+fclose(ft);
+fclose(fp);
+remove("customer.dat");
+rename("temp.dat","customer.dat");
+return 1;
 }
- 

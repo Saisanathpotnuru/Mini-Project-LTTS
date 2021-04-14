@@ -1,10 +1,15 @@
+#ifndef __HEADER_H__
+#define __HEADER_H__
 #include<stdio.h>
 #include<stdlib.h>
-#include<conio.h>
+//#include<conio.h>
 #include<ctype.h>
 #include<windows.h>
 #include<time.h>
-typedef struct customerdetails   //STRUCTURE DECLARATION
+
+
+
+typedef struct customer   //STRUCTURE DECLARATION
 {
 char roomnumber[10];
 char name[20];
@@ -14,26 +19,22 @@ char nationality[15];
 char email[20];
 char period[10];
 char arrivaldate[10];
-} customerdetails;
+} customer;
 
-customerdetails s;
+customer c,temp;
 
-void add();  //FUNCTIONS
-void list();
-void edit();  //GLOBALLY DECLARED FUNCTIONS N VARIABLE
-void remove2();
-void search();
+void login();
+void welcome();
+int menu(int read);
+int search(int read);
+int add(int read);
+int list(int read);
+int edit(int read, char temp[]);
+int delete(int read, char temp[]);
+int exit(int read);
+
+
+
  
-void setcolor(int ForgC)
-{ WORD wColor;
-HANDLE hStdOut=GetStdHandle(STD_OUTPUT_HANDLE);
-CONSOLE_SCREEN_BUFFER_INFO csbi;
- 
-if(GetConsoleScreenBufferInfo(hStdOut,&csbi))
-{
-wColor=(csbi.wAttributes &0xB0)+(ForgC &0x0B);
-// SetConsoleTextAttributes(hStdOut,wColor);
-SetConsoleTextAttribute(hStdOut,wColor);
- 
-}
-}
+
+#endif

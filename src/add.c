@@ -1,49 +1,66 @@
-
 #include<stdio.h>
 #include"header.h"
-void add()
+
+int add(int read)
 {
-FILE *f;
-char test;
-extern s;
-f=fopen("add.txt","a+");
-if(f==0)
-{   f=fopen("add.txt","w+");
-system("cls");
-printf("Please hold on while we set our database in your computer!!");
-printf("\n Process completed press any key to continue!! ");
-getch();
-}
-while(1)
-{
-system("cls");
-printf("\n Enter Customer Details:");
-printf("\n**************************");
-printf("\n Enter Room number:\n");
-scanf("\n%s",&s.roomnumber);
-fflush(stdin);
-printf("Enter Name:\n");
-scanf("%s",s.name);
-printf("Enter Address:\n");
-scanf("%s",s.address);
-printf("Enter Phone Number:\n");
-scanf("%s",s.phonenumber);
-printf("Enter Nationality:\n");
-scanf("%s",s.nationality);
-printf("Enter Email:\n");
-scanf(" %s",s.email);
-printf("Enter Period(\'x\'days):\n");
-scanf("%s",s.period);
-printf("Enter Arrival date(dd\\mm\\yyyy):\n");
-scanf("%s",s.arrivaldate);
-fwrite(&s,sizeof(s),1,f);
-fflush(stdin);
-printf("\n\n1 Room is successfully booked!!");
-printf("\n Press esc key to exit,  any other key to add another customer detail:");
-test=getche();
-if(test==27)
-break;
- 
-}
-fclose(f);
+    system("cls");
+    FILE*fp;
+    fp=fopen("customer.dat","a");
+
+    printf("\n\n\t\t\t ****************** Book a Room ***************************\n");
+
+    printf("\n\t\t\tRoom number: ");
+    if(read==0)
+	{
+	scanf("%s",c.roomnumber);
+	}
+
+    printf("\n\t\t\tCustomer name: ");
+    if(read==0)
+	{
+	scanf("%s",c.name);
+	}
+
+    printf("\n\t\t\tAddress: ");
+    if(read==0)
+	{
+	scanf("%s",c.address);
+	}
+
+    printf("\n\t\t\tPhone no: ");
+    if(read==0)
+	{
+	scanf("%s",c.phonenumber);
+	}
+
+    printf("\n\t\t\tNationality: ");
+    if(read==0)
+	{
+	scanf("%s",c.nationality);
+	}
+
+    printf("\n\t\t\temail: ");
+    if(read==0)
+	{
+	scanf("%s",c.email);
+	}
+
+    printf("\n\t\t\tPeriod of stay: ");
+    if(read==0)
+	{
+	scanf("%s",c.period);
+	}
+
+    printf("\n\t\t\tArrival date: ");
+    if(read==0)
+	{
+	scanf("%s",c.arrivaldate);
+	}
+
+    fprintf(fp," %s %s %s %s %s %s\n", c.roomnumber, c.name, c.address, c.phonenumber, c.nationality, c.email, c.period, c.arrivaldate);
+    printf("\n\n\t\t\t.... BOOKING SUCCESSFUL ....\n");
+    fclose(fp);//file is closed
+
+    return 1;
+
 }

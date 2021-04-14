@@ -1,53 +1,47 @@
-void login()
+#include<stdio.h>
+#include"header.h"
+void login()//function for login
 {
+//list of variables	
+int e=0	;
+char Username[15];
+char Password[15];
+char original_Username[25]="admin";
+char original_Password[15]="admin";
 
-	int a=0,i=0;
-    char uname[10],c=' ';
-    char pword[10],code[10];
-    char user[10]="user";
-    char pass[10]="pass";
-    do
+do
 {
-	system("cls");
-
-    printf("\n  *********  LOGIN FORM  *********  ");
-    printf(" \n                       ENTER USERNAME:-");
-	scanf("%s", &uname);
-	printf(" \n                       ENTER PASSWORD:-");
-	while(i<10)
+	printf("\n\n\n\n\t\t\t\tEnter Username and Password :)");
+	printf("\n\n\n\t\t\t\t\tUSERNAME:");
+	scanf("%s",&Username);
+	
+	printf("\n\n\t\t\t\t\tPASSWORD:");
+	scanf("%s",&Password);
+	
+	if (strcmp(Username,original_Username)==0 && strcmp(Password,original_Password)==0)
 	{
-	    pword[i]=getch();
-	    c=pword[i];
-	    if(c==13) break;
-	    else printf("*");
-	    i++;
-	}
-	pword[i]='\0';
-	//char code=pword;
-	i=0;
-	//scanf("%s",&amp;pword);
-		if(strcmp(uname,user)==0 && strcmp(pword,pass)==0)
-	{
-	printf("  \n\n\n       WELCOME !!!! LOGIN IS SUCCESSFUL");
-
-	break;
+		printf("\n\n\n\t\t\t\t\t...Login Successfull...");
+		
+		
+			menu(0);//calling Menu 
+		break;
 	}
 	else
 	{
-		printf("\n        SORRY !!!!  LOGIN IS UNSUCESSFUL");
-		a++;
-
-		getch();
-
+		printf("\n\t\t\tPassword in incorrect:( Try Again :)");
+		e++;
+		
 	}
+
 }
-	while(a<=2);
-	if (a>2)
+while(e<=2);
+	if(e>2)
 	{
-		printf("\nSorry you have entered the wrong username and password for four times!!!");
-
-		getch();
-
-		}
-		system("cls");
+	printf("%d",e);
+	printf("Login failed. Please try later.");
+	
+    exit(0);
+	}
+ 
+system("cls");
 }

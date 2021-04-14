@@ -1,43 +1,49 @@
+#include<stdio.h>
 #include"header.h"
-void remove2()
+int delete(int read, char temp[])
 {
-FILE *f,*t;
-extern s;
-int i=1;
+FILE *fp,*ft;
+
+int found=0;
 char roomnumber[20];
-if((t=fopen("temp.txt","w"))==NULL)
-exit(0);
-if((f=fopen("add.txt","r"))==NULL)
-exit(0);
 system("cls");
+ft=fopen("temp.dat","w+");
+fp=fopen("customer.dat","r");
+printf("\n\n\t\t\t ****************** Delete Customer Details ***************************\n\n\n");
 printf("Enter the Room Number of the hotel to be deleted from the database: \n");
 fflush(stdin);
-scanf("%s",roomnumber);
-while(fread(&s,sizeof(s),1,f)==1)
+if(read==0)
 {
-if(strcmp(s.roomnumber,roomnumber)==0)
-{       i=0;
-continue;
+scanf("%s",roomnumber);
 }
 else
-fwrite(&s,sizeof(s),1,t);
+{
+strcpy(roomnumber,temp);
 }
-if(i==1)
+while(fscanf(fp,"%s %s %s %s %s %s\n", c.roomnumber, c.name, c.address, c.phonenumber, c.nationality, c.email, c.period, c.arrivaldate)!=EOF)
+{
+if(strcmp(c.roomnumber,roomnumber)!=0)
+{       
+fprintf(ft,"%s %s %s %s %s %s\n", c.roomnumber, c.name, c.address, c.phonenumber, c.nationality, c.email, c.period, c.arrivaldate);
+}
+else
+{
+printf("%s %s %s %s %s %s\n", c.roomnumber, c.name, c.address, c.phonenumber, c.nationality, c.email, c.period, c.arrivaldate);
+found=1;
+}
+if(found==0)
 {
 printf("\n\n Records of Customer in this  Room number is not found!!");
-//remove("E:/file.txt");
-   //rename("E:/temp.txt","E:/file.txt");
-getch();
-fclose(f);
-fclose(t);
-main();
+return 0;
 }
-fclose(f);
-fclose(t);
-remove("add.txt");
-rename("temp.txt","add.txt");
-printf("\n\nThe Customer is successfully removed....");
-fclose(f);
-fclose(t);
-getch();
+else
+{
+fclose(fp);
+fclose(ft);
+remove("customer.dat");
+		rename("temp.dat","customer.dat");
+		printf("\n\n\t\t\t ********** Record deleted **********");
+		
+		return 1;
+}
 }
