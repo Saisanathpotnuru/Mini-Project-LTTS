@@ -24,7 +24,7 @@ int main()
   RUN_TEST(test_menu);
   RUN_TEST(test_list);
   RUN_TEST(test_search);
-  RUN_TEST(test_delete1);
+ // RUN_TEST(test_delete1);
   RUN_TEST(test_exit1);  
 
   /* Close the Unity Test Framework */
