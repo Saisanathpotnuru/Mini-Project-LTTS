@@ -17,7 +17,7 @@ Folder             | Description
 `3_implementation` | All code and documentation
 `4_Test_plan`      | Documents with test plans and procedures
 `5_Report`         | Project report
-`6_ImagesAndVideos`| All the images and files required
+`6_Images`         | All the images and files required
 `7_Other`          | dataset and other files 
 
 
