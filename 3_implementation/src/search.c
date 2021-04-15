@@ -41,7 +41,7 @@ break;
 if(flag==1){
 printf("\n\tRequested Customer could not be found!");
 printf("Press Y to proceed: ");
-scanf("%c",&d);
+scanf("%s",d);
 if(d=="Y")
 {
 menu(0);

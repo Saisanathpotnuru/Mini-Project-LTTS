@@ -15,10 +15,10 @@ do
 {
 	printf("\n\n\n\n\t\t\t\tEnter Username and Password :");
 	printf("\n\n\n\t\t\t\t\tUSERNAME:");
-	scanf("%s",&Username);
+	scanf("%s",Username);
 	
 	printf("\n\n\t\t\t\t\tPASSWORD:");
-	scanf("%s",&Password);
+	scanf("%s",Password);
 	
 	if (strcmp(Username,original_Username)==0 && strcmp(Password,original_Password)==0)
 	{
