@@ -18,6 +18,7 @@ Folder             | Description
 `4_TestPlan`      | Documents with test plans and procedures
 `5_Report`         | Project report
 `6_Images`         | All the images and files required 
+`7_Other`          | dataset and other files 
 
 
 
@@ -25,7 +26,7 @@ Folder             | Description
 
 PS No. |  Name   |    Features    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pass
 -------|---------|----------------|----------------|---------------|-------------|--------------
-`256233` | Sanath  | All    | -   | -   |-   |-   
+`256233` | Sanath  | All    | -   | -   |3  |3   
   
 
 
