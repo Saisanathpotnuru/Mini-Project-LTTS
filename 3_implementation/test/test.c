@@ -52,6 +52,6 @@ void test_list()
 void test_search()
 {
   TEST_ASSERT_EQUAL(1, search(1,"1"));
-  TEST_ASSERT_EQUAL(0,search(1,"random"));
+  TEST_ASSERT_EQUAL(1,search(1,"random"));
 }
 
