@@ -24,7 +24,7 @@ int main()
   RUN_TEST(test_menu);
   RUN_TEST(test_list);
   RUN_TEST(test_search);
- // RUN_TEST(test_delete1);
+  RUN_TEST(test_delete1);
   RUN_TEST(test_exit1);  
 
   /* Close the Unity Test Framework */
@@ -49,7 +49,7 @@ void test_exit1()
 void test_delete1()
 {
   TEST_ASSERT_EQUAL(1, delete1(1,"1"));
-  TEST_ASSERT_EQUAL(0,delete1(1,"random"));
+  TEST_ASSERT_EQUAL(0,delete1(1,"r"));
 }
 
 void test_list()
