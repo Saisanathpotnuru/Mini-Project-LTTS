@@ -54,7 +54,8 @@ printf("Duration of stay: %s \n", c.period);
 printf("Arrival date: %s \n", c.arrivaldate);
 
 printf("\n\n********** Enter New Details *********\n\n");
-
+printf("\n\nEnter New roomnumber: ");
+scanf("%s",c.roomnumber);
 printf("\n\nEnter New name: ");
 scanf("%s",c.name);
 printf("Enter new address: ");

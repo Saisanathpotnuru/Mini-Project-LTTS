@@ -39,14 +39,14 @@ break;
 }
 }
 if(flag==1){
-printf("\n\tRequested Customer could not be found!");
+printf("\n\tRequested Customer could not be found!\n\n");
 printf("Press Y to proceed: ");
 scanf("%s",d);
-if(d=="Y")
+if(strcmp(d,"Y")==0)
 {
 menu(0);
 }
-return 0;
+return 1;
 }
 fclose(fp);
 printf("Press Y to proceed: ");
