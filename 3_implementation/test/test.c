@@ -49,7 +49,7 @@ void test_exit1()
 void test_delete1()
 {
   TEST_ASSERT_EQUAL(1, delete1(1,"1"));
-  TEST_ASSERT_EQUAL(0,delete1(1,"r"));
+  TEST_ASSERT_EQUAL(-1,delete1(1,"r"));
 }
 
 void test_list()
