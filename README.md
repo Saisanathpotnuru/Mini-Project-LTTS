@@ -4,11 +4,9 @@
 
 
 
-
-
-
-
-
+Build | Code Quality | Unity | [Git Inspector](using github.io option)
+------|----------|-------|--------------
+[![C/C++ CI](https://github.com/Saisanathpotnuru/Mini-Project-LTTS/actions/workflows/c-build.yml/badge.svg)](https://github.com/Saisanathpotnuru/Mini-Project-LTTS/actions/workflows/c-build.yml) | [![CI-Coverage](https://github.com/Saisanathpotnuru/Mini-Project-LTTS/actions/workflows/gcov.yml/badge.svg)](https://github.com/Saisanathpotnuru/Mini-Project-LTTS/actions/workflows/gcov.yml) [![Code Quality - Static Code - Cppcheck](https://github.com/Saisanathpotnuru/Mini-Project-LTTS/actions/workflows/cppcheck.yml/badge.svg)](https://github.com/Saisanathpotnuru/Mini-Project-LTTS/actions/workflows/cppcheck.yml) [![Valgrind](https://github.com/Saisanathpotnuru/Mini-Project-LTTS/actions/workflows/valgrind.yml/badge.svg)](https://github.com/Saisanathpotnuru/Mini-Project-LTTS/actions/workflows/valgrind.yml) | [![Unit Testing - Unity](https://github.com/Saisanathpotnuru/Mini-Project-LTTS/actions/workflows/unity.yml/badge.svg)](https://github.com/Saisanathpotnuru/Mini-Project-LTTS/actions/workflows/unity.yml) | [![Contribution Check - Git Inspector](https://github.com/Saisanathpotnuru/Mini-Project-LTTS/actions/workflows/gitinspector.yml/badge.svg)](https://github.com/Saisanathpotnuru/Mini-Project-LTTS/actions/workflows/gitinspector.yml)
 
 
 ### Folder Structure
@@ -22,12 +20,16 @@ Folder             | Description
 `6_ImagesAndVideos`| All the images and files required
 `7_Other`          | dataset and other files 
 
+
+
 ### Contributors List and Summary
 
 PS No. |  Name   |    Features    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pass
 -------|---------|----------------|----------------|---------------|-------------|--------------
 `256233` | Sanath  | All    | -   | -   |-   |-   
   
+
+
 
 ### Challenges Faced and How Was It Overcome
 
