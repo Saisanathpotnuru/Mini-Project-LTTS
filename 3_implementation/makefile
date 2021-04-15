@@ -3,8 +3,9 @@ TEST_PROJ_NAME = Test_$(PROJ_NAME)
 
 BUILD_DIR = Build
 
-SRC = src/add.c src/delete.c src/edit.c src/exit.c src/list.c src/login.c src/menu.c src/search.c src/welcome.c
+SRC = src/add.c src/delete.c src/edit.c src/exit.c src/list.c src/login.c src/menu.c src/search.c src/welcome.c main.c
 
+TEST_SRC= src/add.c src/delete.c src/edit.c src/exit.c src/list.c src/login.c src/menu.c src/search.c src/welcome.c unity/unity.c test/test.c
 
 
 INC = -I inc -I unity
@@ -30,16 +31,16 @@ endif
 .PHONY : all test coverage run clean doc
 
 all:$(BUILD_DIR)
-	gcc $(INC)  $(SRC) main.c -o $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
+	gcc $(INC)  $(SRC)  -o $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
 
 run: all
 	$(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
 
 
-#coverage:${PROJECT_NAME}
-#	gcc -fprofile-arcs -ftest-coverage $(SRC) $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
-#	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
-#	gcov -a $(SRC)
+coverage:${PROJECT_NAME}
+	gcc -fprofile-arcs -ftest-coverage $(SRC) $(INC)  -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	gcov -a $(SRC)
 
 
 staticcheck:
@@ -51,9 +52,9 @@ codesize:
 
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR)
-#test:$(BUILD)
-#	gcc $(TEST_SRC) $(INC) -o test.$(EXEC)
-#	./test.$(EXEC)
+test:$(BUILD)
+	gcc $(TEST_SRC) $(INC) -o test.$(EXEC)
+	./test.$(EXEC)
 valgrind:
 	valgrind ./test.$(EXEC)
 clean:

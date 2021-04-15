@@ -36,7 +36,7 @@ int menu(int read)//function decleration
     	list(0);
     	return 2;
 	case 3:
-	    search(0);//View_rec function is call
+	    search(0,"");//View_rec function is call
     	return 3;
 	case 4:
 		edit(0,"");//Edit_rec function is call

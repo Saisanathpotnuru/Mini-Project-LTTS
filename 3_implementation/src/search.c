@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include"header.h"
-int search(int read)
+int search(int read, char temp[])
 {
 system("cls");
 
@@ -12,7 +12,15 @@ fp=fopen("customer.dat","r");
 printf("\n\n\t\t\t ****************** Searching Room Details ***************************\n");
 
 printf("\n\n\nEnter Room number of the customer to search the details: \n");
-scanf("%s", roomnumber);
+if(read==0)
+{
+scanf("%s",roomnumber);
+}
+else
+{
+strcpy(roomnumber,temp);
+}
+fflush(stdin);
 while(fscanf(fp,"%s %s %s %s %s %s\n", c.roomnumber, c.name, c.address, c.phonenumber, c.nationality, c.email, c.period, c.arrivaldate)!=EOF)
 {
 if(strcmp(c.roomnumber,roomnumber)==0){
