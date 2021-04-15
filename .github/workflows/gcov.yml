@@ -25,4 +25,3 @@ jobs:
       run: sudo apt -y install gcovr
     - name: make coverage
       run: make coverage -C 3_implementation/ 
-© 2021 GitHub, Inc.
