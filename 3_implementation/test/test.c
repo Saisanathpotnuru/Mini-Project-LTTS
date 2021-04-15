@@ -44,8 +44,6 @@ void test_exit1()
    TEST_ASSERT_EQUAL(1, exit1(0));
 }
 
-
-
 void test_list()
 {
   TEST_ASSERT_EQUAL(1,list(1));
