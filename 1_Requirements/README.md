@@ -13,7 +13,7 @@ This project can be considered as the part of a larger hotel administration proj
 | 1947 | Online | Admin can enter details using computer | $ 20 for whole implementation |
 
 ## Defining Our System
-   ![Our System]()
+   ![Our System](https://github.com/Saisanathpotnuru/Mini-Project-LTTS/blob/main/6_Images/use%20case%20diagram.png)
     
     
     - The user has to login. The access id and password are pre feed into the system.
