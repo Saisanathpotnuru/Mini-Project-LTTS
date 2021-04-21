@@ -99,7 +99,7 @@ int delete1(int read, char temp[]);
  * @brief exit the function
  * 
  * @param read 
- * @return int 
+ * @return int type
  */
 int exit1(int read);
 
