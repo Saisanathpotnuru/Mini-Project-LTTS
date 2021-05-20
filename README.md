@@ -18,7 +18,7 @@ Folder             | Description
 `4_TestPlan`      | Documents with test plans and procedures
 `5_Report`         | Project report
 `6_Images`         | All the images and files required 
-`7_Other`          | dataset and other files 
+`7_Other`          | dataset and other files required 
 
 
 
